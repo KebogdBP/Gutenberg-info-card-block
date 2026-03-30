@@ -1,0 +1,141 @@
+/**
+ * Фронтенд-стили для блока "Инфо-карточка"
+ * 
+ * Применяются на сайте (публичная часть)
+ * 
+ * @package WP_Gutenberg_Demo
+ * @since 1.0.0
+ */
+
+// Переменные для консистентности и лёгкой кастомизации
+$color-primary: #0073aa !default;
+$color-primary-dark: #4a90d9 !default;
+$color-text: #333 !default;
+$color-text-light: #666 !default;
+$color-bg: #f9f9f9 !default;
+$color-bg-dark: #222 !default;
+$color-text-dark: #eee !default;
+$spacing-base: 1rem !default;
+$spacing-lg: 2rem !default;
+$border-radius: 4px !default;
+$breakpoint-mobile: 768px !default;
+
+/**
+ * Основной контейнер блока
+ * 
+ * Изоляция стилей: box-sizing для консистентности
+ * Без полного сброса (all: initial) для сохранения наследования шрифтов темы
+ */
+
+.custom-info-card {
+  box-sizing: border-box;
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  padding: $spacing-lg;
+  background: $color-bg;
+  border-left: 4px solid $color-primary;
+  border-radius: $border-radius;
+
+  /**
+   * Внутренняя обёртка для flex-раскладки
+   */
+  &__inner {
+    display: flex;
+    gap: $spacing-base;
+    align-items: flex-start;
+  }
+
+  /**
+   * Контейнер иконки
+   * Фиксированный размер для консистентности
+   */
+  &__icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $color-primary;
+    border-radius: 50%;
+    color: #fff;
+
+    .dashicons {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  /**
+   * Заголовок карточки
+   */
+  &__title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $color-text;
+  }
+
+  /**
+   * Основной текст карточки
+   */
+  &__content {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: $color-text-light;
+  }
+
+  /**
+   * Адаптивная вёрстка для мобильных устройств
+   * Брейкпоинт: 768px
+   */
+  @media (max-width: $breakpoint-mobile) {
+    padding: $spacing-base * 1.5;
+
+    &__inner {
+      flex-direction: column;
+      gap: $spacing-base * 0.75;
+    }
+
+    &__icon {
+      width: 32px;
+      height: 32px;
+
+      .dashicons {
+        font-size: 16px;
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    &__title {
+      font-size: 1.1rem;
+    }
+
+    &__content {
+      font-size: 0.95rem;
+    }
+  }
+
+  /**
+   * Поддержка тёмной темы системы
+   * Автоматическая адаптация цветов при prefers-color-scheme: dark
+   */
+  @media (prefers-color-scheme: dark) {
+    background: $color-bg-dark;
+    border-left-color: $color-primary-dark;
+
+    &__title {
+      color: $color-text-dark;
+    }
+
+    &__content {
+      color: #ccc;
+    }
+  }
+}

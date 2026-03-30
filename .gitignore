@@ -1,0 +1,30 @@
+# WordPress
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+
+# Node.js
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Сборка
+build/
+dist/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Логи
+*.log
+
+# Временные файлы
+tmp/
+temp/

@@ -1,0 +1,16 @@
+# Нормализация концов строк для кроссплатформенной работы
+# https://git-scm.com/docs/gitattributes
+
+* text=auto
+
+# Явно объявить файлы, которые всегда должны быть LF
+*.js text eol=lf
+*.json text eol=lf
+*.scss text eol=lf
+*.php text eol=lf
+*.md text eol=lf
+
+# Бинарные файлы
+*.png binary
+*.jpg binary
+*.gif binary

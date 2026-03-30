@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "custom/info-card",
+  "version": "1.0.0",
+  "title": "Инфо-карточка",
+  "category": "theme",
+  "icon": "info-outline",
+  "description": "Аккуратная карточка с иконкой, заголовком и текстом",
+  "textdomain": "wp-gutenberg-demo",
+  "attributes": {
+    "iconName": {
+      "type": "string",
+      "default": "info-outline"
+    },
+    "title": {
+      "type": "string",
+      "source": "html",
+      "selector": "h3",
+      "default": "Заголовок"
+    },
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "p",
+      "default": "Текст карточки"
+    },
+    "align": {
+      "type": "string"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": ["wide", "full", "left", "center", "right"],
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "spacing": {
+      "padding": true,
+      "margin": true
+    },
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./editor.scss",
+  "style": "file:./style.scss"
+}
