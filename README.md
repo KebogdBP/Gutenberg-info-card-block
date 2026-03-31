@@ -92,5 +92,5 @@ git remote add origin https://github.com/KebogdBP/Gutenberg-info-card-block.git
 git branch -M main
 git push -u origin main
 
-# 6. Проверить PHP
+# 7. Проверить PHP
 php -l includes/class-sanitization.php
